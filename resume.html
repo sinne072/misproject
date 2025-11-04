@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Kayli Sinner</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            min-height: 100vh;
+            background: repeating-linear-gradient(
+                90deg,
+                white,
+                white 7px,
+                lightblue 7px,
+                lightblue 14px
+            );
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-banner {
+            background: white;
+            width: 100%;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .navigation-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            padding: 12px 24px;
+            background-color: white;
+            color: var(--text-color) !important;
+            text-decoration: none !important;
+            border-radius: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+        }
+
+        .nav-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-button.active {
+            background-color: white;
+            font-weight: bold;
+            transform: translateY(-3px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .resume-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-date {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-description {
+            line-height: 1.6;
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+            color: var(--text-color);
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .button:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-banner">
+        <h1 class="page-title">Resume</h1>
+        <div class="navigation-container">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="hobbies.html" class="nav-button">Hobbies</a>
+            <a href="discover.html" class="nav-button">Discover</a>
+            <a href="resume.html" class="nav-button active">Resume</a>
+            <a href="career.html" class="nav-button">Career</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="resume-section">
+            <h2 class="section-title">Education</h2>
+            <div class="resume-item">
+                <h3 class="item-title">University of Minnesota Duluth</h3>
+                <div class="item-date">Expected Graduation: Spring 2028</div>
+                <p class="item-description">
+                    Bachelor's Degree in Marketing and Consumer Insights and Analytics<br>
+                    Minor in Psychology<br>
+                    Current Sophomore
+                </p>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="resume-item">
+                <h3 class="item-title">Technical Skills</h3>
+                <p class="item-description">
+                    - Marketing Analytics<br>
+                    - Consumer Behavior Analysis<br>
+                    - Data Visualization<br>
+                    - Social Media Management<br>
+                    - Market Research
+                </p>
+            </div>
+            <div class="resume-item">
+                <h3 class="item-title">Soft Skills</h3>
+                <p class="item-description">
+                    - Strong Communication<br>
+                    - Project Management<br>
+                    - Team Leadership<br>
+                    - Problem Solving<br>
+                    - Creative Thinking
+                </p>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2 class="section-title">Experience</h2>
+            <div class="resume-item">
+                <h3 class="item-title">Marketing Projects & Coursework</h3>
+                <p class="item-description">
+                    Details about relevant marketing projects, internships, and significant coursework can be added here.
+                </p>
+            </div>
+        </div>
+    </div>
+    <button class="button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
+</body>
+</html>

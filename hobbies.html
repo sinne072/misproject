@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Kayli Sinner</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            min-height: 100vh;
+            background: url('photos/Bridge-over-a-pond-with-lilies-scaled-1-1024x989.jpeg') no-repeat center center;
+            background-size: cover;
+            background-position: center;
+            background-color: #e8f4fb;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-banner {
+            background: white;
+            width: 100%;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .navigation-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            padding: 12px 24px;
+            background-color: white;
+            color: var(--text-color) !important;
+            text-decoration: none !important;
+            border-radius: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+        }
+
+        .nav-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-button.active {
+            background-color: white;
+            font-weight: bold;
+            transform: translateY(-3px);
+        }
+
+        .content-section {
+            background: transparent; /* removed white box so background photo shows through */
+            margin: 2rem;
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: none;
+        }
+
+        
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* AMA card placement and styling */
+        .ama-card {
+            grid-column: 1 / 2; /* sit under first photo on wide screens */
+            align-self: start;
+        }
+
+        .ama-box {
+            background: rgba(255,255,255,0.9); /* less transparent white */
+            color: #000; /* black text */
+            padding: 1.5rem 1.75rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            max-width: 100%;
+            min-height: 380px; /* much taller box */
+            font-size: 1.28rem; /* larger text for the taller layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertically center content */
+        }
+
+        @media (max-width: 900px) {
+            .ama-card {
+                grid-column: 1 / -1; /* span full width on smaller screens */
+            }
+            .ama-box {
+                min-height: auto;
+                font-size: 1.06rem;
+                padding: 1rem;
+                justify-content: flex-start;
+            }
+            .ama-card-second {
+                grid-column: 1 / -1; /* span full width on smaller screens */
+            }
+        }
+
+        /* placement for second running textbox under second photo */
+        .ama-card-second {
+            grid-column: 2 / 3; /* sit under second photo on wide screens */
+            align-self: start;
+        }
+
+        /* placement for third textbox under third photo */
+        .ama-card-third {
+            grid-column: 3 / 4; /* sit under third photo on wide screens */
+            align-self: start;
+        }
+
+        /* force all textbox cards to the same grid row on wide screens so they align */
+        @media (min-width: 900px) {
+            .ama-card, .ama-card-second, .ama-card-third {
+                grid-row: 2;
+            }
+        }
+
+        
+
+        .hobby-card {
+            background: white;
+            padding: 0.6rem; /* reduced padding so photos have less white on the sides */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* tighter frame for specific photo cards to hug the image */
+        .hobby-card.tight-card {
+            padding: 0.6rem; /* restore standard padding */
+            border-radius: 8px; /* restore rounded corners */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white; /* restore white background */
+        }
+
+        /* thin white border for the tight second photo */
+        .hobby-card.tight-card .hobby-photo {
+            border-radius: 6px; /* keep rounded corners on the image */
+            display: block;
+        }
+
+        .hobby-photo {
+            width: 100%;
+            height: 320px; /* increased height */
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+        }
+
+        /* show whole image for specific photos (no cropping) */
+        .hobby-photo.contain {
+            object-fit: contain;
+            background-color: rgba(255,255,255,0.18); /* much less white so sides are minimal */
+            padding: 0.08rem; /* tiny inner padding to keep a hairline border */
+            border-radius: 3px;
+        }
+
+        @media (min-width: 900px) {
+            .hobby-photo {
+                height: 420px; /* larger on wider screens */
+            }
+        }
+
+        .hobby-title {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+            color: var(--text-color);
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .button:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-banner">
+        <h1 class="page-title">My Hobbies</h1>
+        <div class="navigation-container">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="hobbies.html" class="nav-button active">Hobbies</a>
+            <a href="discover.html" class="nav-button">Discover</a>
+            <a href="resume.html" class="nav-button">Resume</a>
+            <a href="career.html" class="nav-button">Career</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="hobbies-grid">
+            <div class="hobby-card photo-card">
+                <img src="photos/IMG_6117.JPG" alt="Photography" class="hobby-photo">
+            </div>
+            
+            <div class="hobby-card photo-card tight-card">
+                <img src="photos/IMG_0977.JPG" alt="Hobby photo" class="hobby-photo contain">
+            </div>
+            <div class="hobby-card photo-card">
+                <img src="photos/IMG_1679.JPG" alt="Hobby photo 3" class="hobby-photo">
+            </div>
+            <!-- Lifeguard textbox placed under the third photo -->
+            <div class="ama-card-third">
+                <div class="ama-box">
+                    <p>
+                        I’ve been a lifeguard at LifeTime Fitness since I was 16. Lifeguarding has definitely been one of the hardest but most rewarding jobs I’ve ever had. In the 4 years I’ve been there, I have been promoted to a Supervisor role and grown in my professional career.
+                    </p>
+                    <p>
+                        Some of my favorite memories and people are tied to lifeguarding. Each summer, we all come back from college and work doubles at the pool. It is seriously the best summer job any teenager could ask for. It’s fun and rewarding, but it can also be very stressful at times. We have had emergencies on the pool deck, and my team and I have had to respond to them. Trusting that my coworkers know what to do in an emergency has been a personal challenge for me. But with every shift, I learn and grow.
+                    </p>
+                    <p>
+                        I’m excited to work over breaks and for next summer. The LifeTime pool deck is a place I hold close to my heart. Whether it's when I’m on stand, or just tanning in a lounge chair on my day off, LifeTime has been a pinnacle place for me.
+                    </p>
+                </div>
+            </div>
+            <!-- AMA card placed under first photo; grid-column ensures it sits under the first column on wide screens -->
+            <div class="ama-card">
+                <div class="ama-box">
+                    <p>
+                        I joined the American Marketing Association in the Spring of my Freshman year. I am now in AMA Leadership as a Board Member. I have competed in two competitions. The most recent one was in Whitewater, Wisconsin. Out of 25 teams and roughly 500 students, I placed 4th in my Digital Strategy and 3rd in my Marketing Strategy.
+                    </p>
+                    <p>
+                        In AMA, we work with one company a semester. This Fall, we are working with Minnesuing Acres, an executive retreat resort located in Wisconsin. We are giving them a full digital makeover and helping them update their website and increase their customers in the winter months. We got the chance to tour the property, and it was an amazing experience.
+                    </p>
+                    <p>
+                        AMA is important to me because, unlike other clubs, where you just socialize and make crafts, AMA works with real companies. We compete, we actually do things that can go on a resume. Joining this club was one of the best decisions I have made since coming to college!
+                    </p>
+                </div>
+            </div>
+            <!-- Running textbox placed under the second photo -->
+            <div class="ama-card-second">
+                <div class="ama-box">
+                    <p>
+                        One of my favorite things to do is run. I like it because it's a good way to push myself physically. I love waking up at 5am in the summer, before the sun has risen, and going for a run. It’s also good for me on a mental level. Running is my way of decompressing. I run so that I stay mentally sane. I’ve been running since I was in third grade, and it's something I want to continue for the rest of my life.
+                    </p>
+                    <p>
+                        My love for running really took off when I joined my high school’s cross country and track team. I met so many amazing girls through those sports, and even though I’m not on those teams anymore, I still go to their races and cheer them on. High school, for me, was practicing six days a week, leaving my whole soul out on a track with my teammates.
+                    </p>
+                    <p>
+                        Now that I’m not on a team, I like to run for fun. Running around Duluth has been so cool. Running up these hills, though, that is not cool. I’ve always wanted to run a half-marathon before I turn 20. So that’s something to look forward to this year!
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <button class="button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
+</body>
+</html>

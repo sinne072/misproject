@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --second-gallery-offset: 0px; /* fine-tune horizontal offset for second gallery */
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            min-height: 100vh;
+            background: repeating-linear-gradient(
+                90deg,
+                white,
+                white 7px,
+                lightblue 7px,
+                lightblue 14px
+            );
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-banner {
+            background: white;
+            width: 100%;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .navigation-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            padding: 12px 24px;
+            background-color: rgba(173, 216, 230, 0.1);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid rgba(173, 216, 230, 0.5);
+        }
+
+        .nav-button:hover {
+            background-color: rgba(173, 216, 230, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-button.active {
+            background-color: rgba(173, 216, 230, 0.3);
+            font-weight: bold;
+        }
+
+        .page-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .intro-text {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            flex: 1;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+            color: var(--text-color);
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .photo-gallery {
+            width: 80%;
+            max-width: 800px;
+            margin: 2rem 0 2rem 2rem;
+            padding: 0.75rem;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.2) 10px,
+                rgba(255, 255, 255, 0.2) 20px
+            );
+            border-radius: 10px;
+        }
+
+        /* Second gallery: make it the same width/margins as the left gallery column so images align */
+        .photo-gallery.second-gallery {
+            width: 440px;
+            max-width: none;
+            margin: 2rem auto; /* center under first gallery */
+            padding: 0.75rem;
+            box-sizing: border-box;
+            transform: translateX(var(--second-gallery-offset)); /* allow fine horizontal nudging */
+        }
+
+        .gallery-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-row:first-child {
+            margin-top: 0;
+        }
+
+        .gallery-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .gallery-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Two-column layout for gallery + text */
+        .gallery-text-row {
+            display: flex;
+            gap: 2rem;
+            width: 95%;
+            max-width: 1500px;
+            margin: 2rem 0 2rem 2rem;
+            align-items: stretch; /* make children stretch to same height */
+        }
+
+        .text-box {
+            background: white;
+            padding: 0.75rem; /* keep small inner padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.09);
+            flex: 0 0 440px; /* match gallery width */
+            width: 440px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 1.15rem; /* slightly reduced for fit */
+            min-height: 360px; /* reasonable vertical size */
+            display: block; /* normal flow */
+            height: 100%; /* fill the container height so bottoms align */
+            /* margin-top removed; the containing .text-column controls vertical positioning */
+        }
+
+        .text-box p {
+            margin: 0; /* remove paragraph default margins */
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Make gallery column fixed width and a flex column so its height is deterministic */
+        .gallery-column {
+            width: 440px; /* fits two 200px images + gaps */
+            flex: 0 0 440px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* feature video removed - keeping layout focused on galleries */
+
+        /* Column wrapper for the text boxes so they stack vertically on the right */
+        .text-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 440px;
+            flex: 0 0 440px;
+            box-sizing: border-box;
+            margin-top: 40px; /* position the whole column down to match previous behavior */
+        }
+
+        /* Gap between stacked gallery-text-row groups */
+        .gallery-text-row + .gallery-text-row {
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-text-row {
+                flex-direction: column;
+                width: 92%;
+                margin-left: 2rem;
+            }
+
+            .gallery-column {
+                width: 100%;
+                flex: 1 1 auto;
+            }
+
+            .text-box {
+                min-height: auto;
+                padding: 1.25rem;
+                width: 100%;
+                flex: 1 1 auto;
+                display: block;
+            }
+            .text-column {
+                width: 100%;
+                flex: 1 1 auto;
+                margin-top: 1rem; /* smaller offset on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-banner">
+        <h1 class="page-title">Home Page</h1>
+        <div class="navigation-container">
+            <a href="index.html" class="nav-button active">Home</a>
+            <a href="hobbies.html" class="nav-button">Hobbies</a>
+            <a href="discover.html" class="nav-button">Discover</a>
+            <a href="resume.html" class="nav-button">Resume</a>
+            <a href="career.html" class="nav-button">Career</a>
+        </div>
+    </div>
+    <div class="profile-section">
+        <img src="photos/Kayli Sinner2jpg.JPEG" alt="Kayli Sinner" class="profile-image">
+        <div class="intro-text">
+            Hello, my name is Kayli Sinner and I'm a Marketing and Consumer Insights and Analytics major, with a minor in Psychology at the University of Minnesota Duluth! I'm currently a sophmore and on track to graduate in the Spring of 2028.
+        </div>
+    </div>
+    <div class="gallery-text-row">
+        <div class="photo-gallery gallery-column">
+            <div class="gallery-row">
+                <img src="photos/Tezza-6572.JPG" alt="Gallery Image 1" class="gallery-image">
+                <img src="photos/Tezza-1317.JPG" alt="Gallery Image 2" class="gallery-image">
+            </div>
+            <div class="gallery-row">
+                <img src="photos/IMG_3668.jpg" alt="Gallery Image 3" class="gallery-image">
+                <img src="photos/IMG_0020.JPG" alt="Gallery Image 4" class="gallery-image">
+            </div>
+        </div>
+        <div class="text-column">
+            <div class="text-box">
+                <p>I love to adventure and explore new places. Some families go to Florida or Hawaii, but my family goes camping around Lake Superior. The vacations we take are spent up North in campgrounds. I’ve been all over the Midwest. Some of my favorite places are Madeline Island, Pattison State Park, Tettegouche State Park, Jay Cooke State Park, Ashland, WI, Door County, and Copper Harbor, MI. I also enjoy going on motorcycle trips with my dad. Our most recent trip was riding around Lake Superior. We went over the 4th of July weekend, and when we got back, our total mileage for the whole trip was 1776 miles. What a crazy coincidence!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-text-row">
+        <div class="photo-gallery gallery-column">
+            <div class="gallery-row">
+                <img src="photos/Tezza-0035.JPG" alt="Gallery Image 5" class="gallery-image">
+                <img src="photos/IMG_7430.jpg" alt="Gallery Image 6" class="gallery-image">
+            </div>
+            <div class="gallery-row">
+                <img src="photos/IMG_5421.jpg" alt="Gallery Image 7" class="gallery-image">
+                <img src="photos/IMG_3968.jpg" alt="Gallery Image 8" class="gallery-image">
+            </div>
+        </div>
+        <div class="text-column">
+            <div class="text-box">
+                <p>One of my passions is creating art in any form. I like to take photos, collage, decorate cakes, make and paint pottery, draw, paint rocks, and paint canvases. I have been painting since I was very young, and while I don’t get to do it all the time, now that I’m in college, I love any free time I get to paint something beautiful. I take inspiration from my love for sailboats, lighthouses, lobsters, flowers, fruit, and other things in nature. I like using oil paints the most and am inspired by Monet and his paintings.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Second gallery moved into the left gallery-column so it appears directly below the first gallery -->
+    <button class="button" onclick="alert('Contact me at: sinne072@d.umn.edu')" style="position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);">Contact Me</button>
+</body>
+</html>

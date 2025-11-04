@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            min-height: 100vh;
+            background: repeating-linear-gradient(
+                90deg,
+                white,
+                white 7px,
+                lightblue 7px,
+                lightblue 14px
+            );
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-banner {
+            background: white;
+            width: 100%;
+            padding: 4rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .intro-text {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            flex: 1;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .navigation-container {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+            color: var(--text-color);
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-banner">
+        <div class="profile-section">
+            <img src="photos/Kayli Sinner2jpg.JPEG" alt="Kayli Sinner" class="profile-image">
+            <div class="intro-text">
+                Hello, my name is Kayli Sinner and I'm a Marketing and Consumer Insights and Analytics major, with a minor in Psychology at the University of Minnesota Duluth! I'm currently a sophmore and on track to graduate in the Spring of 2028.
+            </div>
+        </div>
+    </div>
+    <div class="navigation-container">
+        <div class="social-links">
+            <a href="page1.html" class="social-link" title="Page 1">1</a>
+            <a href="page2.html" class="social-link" title="Page 2">2</a>
+            <a href="page3.html" class="social-link" title="Page 3">3</a>
+        </div>
+        <button class="button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
+    </div>
+</body>
+</html>

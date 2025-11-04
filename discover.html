@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Kayli Sinner</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            min-height: 100vh;
+            background: repeating-linear-gradient(
+                90deg,
+                white,
+                white 7px,
+                lightblue 7px,
+                lightblue 14px
+            );
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-banner {
+            background: white;
+            width: 100%;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .navigation-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            padding: 12px 24px;
+            background-color: white;
+            color: var(--text-color) !important;
+            text-decoration: none !important;
+            border-radius: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+        }
+
+        .nav-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-button.active {
+            background-color: white;
+            font-weight: bold;
+            transform: translateY(-3px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .discover-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .discover-title {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .discover-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+            color: var(--text-color);
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .button:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-banner">
+        <h1 class="page-title">Discover</h1>
+        <div class="navigation-container">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="hobbies.html" class="nav-button">Hobbies</a>
+            <a href="discover.html" class="nav-button active">Discover</a>
+            <a href="resume.html" class="nav-button">Resume</a>
+            <a href="career.html" class="nav-button">Career</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="discover-grid">
+            <div class="discover-card">
+                <h2 class="discover-title">My Journey</h2>
+                <p class="discover-description">Learn about my path from high school to pursuing a Marketing and Consumer Insights degree at UMD, and the experiences that have shaped my career aspirations.</p>
+            </div>
+            <div class="discover-card">
+                <h2 class="discover-title">My Passions</h2>
+                <p class="discover-description">Discover what drives me in both my academic and personal life, from marketing analytics to psychology and how these interests intersect.</p>
+            </div>
+            <div class="discover-card">
+                <h2 class="discover-title">My Goals</h2>
+                <p class="discover-description">Explore my academic and professional goals, including my plans for graduating in Spring 2028 and my vision for future career opportunities.</p>
+            </div>
+        </div>
+    </div>
+    <button class="button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
+</body>
+</html>
