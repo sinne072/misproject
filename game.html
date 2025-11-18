@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Kayli Sinner</title>
+    <title>Game - Kayli Sinner</title>
     <style>
         :root {
             --primary-color: #4a90e2;
@@ -15,7 +15,7 @@
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             min-height: 100vh;
-            background: url('photos/F197509P.jpg') no-repeat center center;
+            background: url('photos/s-l1200.jpg') no-repeat center center;
             background-size: cover;
             background-position: center;
             background-color: #e8f4fb;
@@ -78,77 +78,42 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .game-title {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
             text-align: center;
         }
 
-        .pdf-container {
-            width: 100%;
-            height: 800px;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .download-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 12px 24px;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-family: 'Times New Roman', Times, serif;
+        .game-description {
             font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .download-link:hover {
-            background-color: #3a7bc8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .button {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background-color: white;
+            line-height: 1.6;
             color: var(--text-color);
-            font-family: 'Times New Roman', Times, serif;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .button:hover {
-            transform: translateX(-50%) translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            margin-bottom: 2rem;
         }
     </style>
 </head>
 <body>
     <div class="hero-banner">
-        <h1 class="page-title">Resume</h1>
+        <h1 class="page-title">Game</h1>
         <div class="navigation-container">
             <a href="index.html" class="nav-button">Home</a>
             <a href="hobbies.html" class="nav-button">Hobbies</a>
             <a href="discover.html" class="nav-button">Discover</a>
-            <a href="resume.html" class="nav-button active">Resume</a>
+            <a href="resume.html" class="nav-button">Resume</a>
             <a href="career.html" class="nav-button">Career</a>
-            <a href="game.html" class="nav-button">Game</a>
+            <a href="game.html" class="nav-button active">Game</a>
             <button class="nav-button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
         </div>
     </div>
     <div class="content-section">
-        <embed src="Kayli Sinner.pdf" type="application/pdf" class="pdf-container">
-        <br>
-        <a href="Kayli Sinner.pdf" download class="download-link">Download Resume (PDF)</a>
+        <h2 class="game-title">Welcome to the Game Page</h2>
+        <p class="game-description">
+            This is your new game page. You can add interactive content, games, or any other features you'd like here.
+        </p>
     </div>
 </body>
 </html>

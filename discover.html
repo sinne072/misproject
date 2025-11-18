@@ -15,13 +15,10 @@
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             min-height: 100vh;
-            background: repeating-linear-gradient(
-                90deg,
-                white,
-                white 7px,
-                lightblue 7px,
-                lightblue 14px
-            );
+            background: url('photos/monet1.jpg') no-repeat center center;
+            background-size: cover;
+            background-position: center;
+            background-color: #e8f4fb;
             display: flex;
             flex-direction: column;
         }
@@ -76,11 +73,54 @@
         }
 
         .content-section {
-            background: rgba(255, 255, 255, 0.9);
+            background: transparent;
             margin: 2rem;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .umd-box {
+            background: rgba(255,255,255,0.9);
+            color: #000;
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            max-width: 350px;
+            min-height: 500px;
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0;
+        }
+
+        .umd-box-right {
+            background: rgba(255,255,255,0.9);
+            color: #000;
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            max-width: 350px;
+            min-height: 500px;
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .umd-box, .umd-box-right {
+                min-height: auto;
+                font-size: 1.06rem;
+                padding: 1rem;
+                justify-content: flex-start;
+            }
         }
 
         .discover-grid {
@@ -142,24 +182,31 @@
             <a href="discover.html" class="nav-button active">Discover</a>
             <a href="resume.html" class="nav-button">Resume</a>
             <a href="career.html" class="nav-button">Career</a>
+            <a href="game.html" class="nav-button">Game</a>
+            <button class="nav-button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
         </div>
     </div>
+    
     <div class="content-section">
-        <div class="discover-grid">
-            <div class="discover-card">
-                <h2 class="discover-title">My Journey</h2>
-                <p class="discover-description">Learn about my path from high school to pursuing a Marketing and Consumer Insights degree at UMD, and the experiences that have shaped my career aspirations.</p>
-            </div>
-            <div class="discover-card">
-                <h2 class="discover-title">My Passions</h2>
-                <p class="discover-description">Discover what drives me in both my academic and personal life, from marketing analytics to psychology and how these interests intersect.</p>
-            </div>
-            <div class="discover-card">
-                <h2 class="discover-title">My Goals</h2>
-                <p class="discover-description">Explore my academic and professional goals, including my plans for graduating in Spring 2028 and my vision for future career opportunities.</p>
-            </div>
+        <div class="umd-box">
+            <h2 style="margin-top: 0; margin-bottom: 1rem; font-size: 2.5rem; color: #2c3e50; text-align: center;">Why UMD?</h2>
+            <p>
+                I chose UMD because I love the North Shore. I've been coming up here since I was three and so it means a lot to me. Now that I go to college here, I only see Duluth as a college town. The whole tourism aspect has dissapeared. I love UMD's business school and all the diffrent ways you can connect with the community.
+            </p>
+            <p>
+                I'm only a sophmore, but I feel like I've made this place my home. I really would'nt have it any other way. I had an amazing frehsman year, I met my four best firends, I joined clubs, and went on lots of adventures. As a sophmore, I've only continued to grow and try new things. I'm very busy now, but I'm gratful for that. I'm glad my life is filled with the things I love.
+            </p>
+        </div>
+        
+        <div class="umd-box-right">
+            <h2 style="margin-top: 0; margin-bottom: 1rem; font-size: 2.5rem; color: #2c3e50; text-align: center;">Highlights</h2>
+            <p>
+                I have so many favorite memeories but my favorites are sledding down a huge mountian of snow in a random UMD parking lot with my roommates, tanning on the beach in 45 degree weather, racing on Griggs beach after eating at the DC, signing our first lease together, taking walks around campus, seeing the northern lights, and just living all together in the same house.
+            </p>
+            <p>
+                I've made a lot of amazing memories here. This is the best time of my life and I've seen so much and met so many amazing people. It's crazy looking back and seeing how much I've changed as a person. I wouldnt be here if it werent for my rommates, and all the people in my life that I met here in Duluth.
+            </p>
         </div>
     </div>
-    <button class="button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
 </body>
 </html>

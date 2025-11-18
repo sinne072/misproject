@@ -16,13 +16,10 @@
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             min-height: 100vh;
-            background: repeating-linear-gradient(
-                90deg,
-                white,
-                white 7px,
-                lightblue 7px,
-                lightblue 14px
-            );
+            background: url('photos/download.jpg') no-repeat center center;
+            background-size: cover;
+            background-position: center;
+            background-color: #e8f4fb;
             display: flex;
             flex-direction: column;
         }
@@ -128,14 +125,9 @@
             max-width: 800px;
             margin: 2rem 0 2rem 2rem;
             padding: 0.75rem;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.1),
-                rgba(255, 255, 255, 0.1) 10px,
-                rgba(255, 255, 255, 0.2) 10px,
-                rgba(255, 255, 255, 0.2) 20px
-            );
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
         }
 
         /* Second gallery: make it the same width/margins as the left gallery column so images align */
@@ -146,6 +138,9 @@
             padding: 0.75rem;
             box-sizing: border-box;
             transform: translateX(var(--second-gallery-offset)); /* allow fine horizontal nudging */
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
         }
 
         .gallery-row {
@@ -275,6 +270,8 @@
             <a href="discover.html" class="nav-button">Discover</a>
             <a href="resume.html" class="nav-button">Resume</a>
             <a href="career.html" class="nav-button">Career</a>
+            <a href="game.html" class="nav-button">Game</a>
+            <button class="nav-button" onclick="alert('Contact me at: sinne072@d.umn.edu')">Contact Me</button>
         </div>
     </div>
     <div class="profile-section">
@@ -319,6 +316,5 @@
         </div>
     </div>
     <!-- Second gallery moved into the left gallery-column so it appears directly below the first gallery -->
-    <button class="button" onclick="alert('Contact me at: sinne072@d.umn.edu')" style="position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);">Contact Me</button>
 </body>
 </html>
